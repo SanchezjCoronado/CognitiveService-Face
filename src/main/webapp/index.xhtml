@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Detection</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:growl life="1500" showDetail="true">
+                <p:autoUpdate/>
+            </p:growl>
+            <p:panelGrid columns="2" id="dlg">
+                <p:inputText value="#{consultarC.urlImage}" placeholder="Url de la Imagen"/>
+                <p:commandButton id="btnConsultar" value="Consultar" actionListener="#{consultarC.consultar()}" update="form"/>
+                <p:commandButton id="btnlimpiar" value="Limpiar" actionListener="#{consultarC.clear()}" update="form"/>
+                <br/>
+                <spam style="font-size: 50px;">#{consultarC.resultado}</spam>
+                <p:blockUI block="form" trigger="btnConsultar" />
+                <img src="#{consultarC.modelo.LINK}" />
+           <p:panelGrid columns="2" id="pnlg">
+                    <p:outputLabel value="Emoción"/>
+                    <p:outputLabel value="#{consultarC.modelo.EMOCION}"/>
+                    <p:outputLabel value="Bigote"/>
+                    <p:outputLabel value="#{consultarC.modelo.BIGOTE}"/>
+                    <p:outputLabel value="Barba"/>
+                    <p:outputLabel value="#{consultarC.modelo.BARBA}"/>
+                    <p:outputLabel value="Lentes"/>
+                    <p:outputLabel value="#{consultarC.modelo.GAFAS}"/>
+                    <p:outputLabel value="Edad"/>
+                    <p:outputLabel value="#{consultarC.modelo.age}"/>
+                    <p:outputLabel value="Sexo"/>
+                    <p:outputLabel value="#{consultarC.modelo.gender}"/>
+                    <p:outputLabel value="Ojos Pintados"/>
+                    <p:outputLabel value="#{consultarC.modelo.OJOSMAQUILLADOS}"/>
+                    <p:outputLabel value="Labios Pintados"/>
+                    <p:outputLabel value="#{consultarC.modelo.LABIOSPINTADOS}"/>
+                    <p:outputLabel value="Es Calvo"/>
+                    <p:outputLabel value="#{consultarC.modelo.CALVO}"/>
+                    <p:outputLabel value="Cabello Invisible"/>
+                    <p:outputLabel value="#{consultarC.modelo.INVENSIBLE}"/>
+                    <p:outputLabel value="Color de Pelo"/>
+                    <p:outputLabel value="#{consultarC.modelo.COLORPELO}"/>
+                </p:panelGrid>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
